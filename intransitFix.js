@@ -19,6 +19,8 @@ fs.createReadStream(inputFile)
       const orderNumber = columns[1]; // second column
       const sku = columns[2];         // third column
       const shipQty = columns[14]; // 15th column
+      const shipDate = columns[15]; // 16th column
+      const shipTime = columns[16]; // 17th column
 
       xmlOutput += `  <order>\n`;
       xmlOutput += `    <orderNumber>${orderNumber}</orderNumber>\n`;
@@ -27,6 +29,8 @@ fs.createReadStream(inputFile)
       xmlOutput += `        <sku>${sku}</sku>\n`;
       xmlOutput += `        <status>Shipped</status>\n`;
       xmlOutput += `        <shippedQty>1.00</shippedQty>\n`;
+      xmlOutput += `        <shipDate>${shipDate}</shipDate>\n`;
+      xmlOutput += `        <shipTime>${shipTime}</shipTime>\n`;
       xmlOutput += `      </item>\n`;
       xmlOutput += `    </commerceItems>\n`;
       xmlOutput += `  </order>\n`;
